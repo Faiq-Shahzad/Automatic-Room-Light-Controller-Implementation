@@ -1,0 +1,262 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://use.fontawesome.com/1bfbdb8301.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: #702963">
+	<div class="container-fluid row py-2" style="background-color: grey;">
+
+		<div class="col-md-8 container display-4" style=" color:red;">
+		Automatic Room light Controller</div>
+
+		<div class="col-md-4 container ">
+			<i class="fa fa-user-circle fa-3x float-right mx-4" aria-hidden="true"></i>
+			<i class=" fa fa-cog fa-3x float-right mx-4" aria-hidden="true"></i>
+		</div>
+	</div>
+
+<div class="row pt-3">
+	<div class="col-md-3">
+
+	<table class="table table-bordered ">
+
+    <tbody>
+      <tr>
+        <td><button type="button" class="btn text-left btn-sm" style="background-color:transparent; width:100%; color: 
+        white; font-weight: bolder;">Home
+			<i class=" fa fa-home fa-2x float-right mx-2" aria-hidden="true"></i>
+
+    </button></td>
+       
+      </tr>
+      <tr>
+      <td><button type="button" class="btn text-left btn-sm" style="background-color:transparent; width:100%; color: 
+        white; font-weight: bolder;">Lights
+
+    </button></td>
+      </tr>
+      <tr>
+<td><button type="button" class="btn text-left btn-sm" style="background-color:transparent; width:100%; color: 
+        white; font-weight: bolder;">Counter
+
+    </button></td>      </tr>
+      <tr>
+      <td><button type="button" class="btn text-left btn-sm" style="background-color:transparent; width:100%; color: 
+        white; font-weight: bolder;">Sensors
+
+    </button></td>
+      </tr>
+        <tr>
+      <td><button type="button" class="btn text-left btn-sm" style="background-color:transparent; width:100%; color: 
+        white; font-weight: bolder;">Power Management
+
+    </button></td>
+      </tr>
+        <tr>
+      <td><button type="button" class="btn text-left btn-sm" style="background-color:transparent; width:100%; color: 
+        white; font-weight: bolder;">Security Management
+
+    </button></td>
+      </tr>
+        <tr>
+      <td><button type="button" class="btn text-left btn-sm" style="background-color:transparent; width:100%; color: 
+        white; font-weight: bolder;">Accessibilty
+
+    </button></td>
+      </tr>
+        <tr>
+      <td><button type="button" class="btn text-left btn-sm" style="background-color:transparent; width:100%; color: 
+        white; font-weight: bolder;">History
+
+    </button></td>
+      </tr>
+    </tbody>
+  	</table>
+
+	</div>
+
+	<div class="col-md-9" style="">
+		
+		<div class="input-group float-right"  style="width:30% !important;">
+		  <input type="search" class="form-control " placeholder="Search" aria-label="Search"
+		    aria-describedby="search-addon" />
+		  <span class="input-group-text border-0 float-right" id="search-addon">
+		    <i class="fa fa-search"></i>
+		  </span>
+		</div>
+
+		<div class="container-fluid p-3" style="margin-top: 5%; background-color: #37FDFC; font-weight: bolder; ">LIGHTS
+
+			<i class="fa fa-lightbulb-o float-right fa-2x" aria-hidden="true"></i>
+		</div>
+
+
+		<div class="container-fluid p-3" style=" background-color: silver; font-weight: bolder; border-color: #37FDFC  ">Connected
+		</div>
+
+		<div class="container-fluid dropdown" style="padding: 5%; background-color: #236B8E; font-weight: bolder; ">
+			<button type="button" oncontextmenu="dropdown()" class="btn text-left btn-lg btn-danger dropbtn" id="l1" style="color: 
+        	white; font-weight: bolder;">Light 1
+    		</button> 
+
+    		<div id="myDropdown1" class="dropdown-content">
+		    <a href="#">status <i class="pl-2 fa fa-toggle-on" aria-hidden="true"></i></a>
+		    <a href="#" id="myDropdown1" onclick="hide_light(this)">Remove Light</a>
+		    <a href="#">Properties</a>
+		  	</div>
+
+		  	<button type="button" oncontextmenu="dropdown()" class="btn text-left btn-lg btn-danger dropbtn ml-4" id="l2" style="color: 
+        	white; font-weight: bolder; display: none;">Light 2
+    		</button>
+
+    		<div id="myDropdown2" class="dropdown-content">
+		    <a href="#">status <i class="pl-2 fa fa-toggle-on" aria-hidden="true"></i></a>
+		    <a href="#" id="myDropdown2" onclick="hide_light(this)">Remove Light</a>
+		    <a href="#">Properties</a>
+		  	</div>
+
+		</div>
+
+		<div class="container-fluid p-3" style=" background-color: silver; font-weight: bolder; border-color: #37FDFC  ">Night Light
+		<label class="ml-3 switch">
+  		<input type="checkbox" checked onclick="myfunction() ">
+  		<span class="slider round"></span>
+		</label>
+
+		<i class="fa fa-lightbulb-o float-right fa-2x" aria-hidden="true"></i>
+		<i class="fa fa-moon-o float-right " aria-hidden="true"></i>
+
+		</div>
+
+		<div class="container-fluid " id="details" value="" style="padding: 5%; background-color: #236B8E	; color: white">Brightness
+		<div class="progress">
+		<div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+			<br>
+			<br>
+			<p> Schedule</p>
+
+			<form action="">
+			  <input type="time" id="appt" name="appt" style="width: 15%;">
+
+			  <label class="mx-3">To </label>
+			  <input class="mx-3" type="time" id="appt" name="appt" style="width: 15%;">
+
+			  <input class="mx-3 btn btn-info" type="submit" value="submit">
+			</form>
+		</div>	
+
+		<div class="container-fluid p-3" style=" background-color: silver; font-weight: bolder; border-color: #37FDFC  ">Scan Lights
+		<i class="fa fa-qrcode float-right fa-2x" aria-hidden="true"></i>
+		</div>	
+
+		<div class="container-fluid " style="padding: 5%; background-color: #236B8E	; font-weight: bolder; ">
+			<button type="button" class="btn text-left btn-lg btn-primary " id="light2" style="color: 
+        	white; font-weight: bolder;">Light 2
+
+    		</button>
+    		<button type="button" class="btn text-left btn-sm btn-success " onclick="show_btn2()" id="tick" style="color: 
+        	white; font-weight: bolder;"><i class="fa fa-check" aria-hidden="true"></i>
+
+    		</button>
+    		<button type="button" class="btn text-left btn-sm btn-danger " id="cross" style="color: 
+        	white; font-weight: bolder;"><i class="fa fa-times" aria-hidden="true"></i>
+
+    		</button>
+		</div>	
+		
+		<button class="btn btn-success my-4"  style="margin-left: 50%;"> Save</button>
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+	
+
+function myfunction(){
+
+	// var x =  document.getElementById("l1").innerHTML = "Hello World"	;
+	if(document.getElementById("details").value == "on"){
+			$('#details').show();
+			document.getElementById("details").value = "off"
+	}
+	//var x =  document.getElementById("details").value = "on"	;
+	else{
+		$('#details').hide();
+		document.getElementById("details").value = "on"
+	}
+	
+}
+// document.addEventListener('contextmenu', function(e) {
+//   alert('Right click');
+// });
+
+function dropdown(){
+document.getElementById("myDropdown1").classList.toggle("show");
+
+}
+
+function hide_light(a){
+		if(a.id== "myDropdown1"){
+			$('#l1').hide();
+			document.getElementById("light2").innerHTML="Light 1";
+			document.getElementById("l1").value="hidden";
+
+
+		}	
+		else
+			$('#l2').hide();
+			// document.getElementById("l2").innerHTML="Light 1";
+}
+
+
+
+function show_btn2()
+{
+	var z= document.getElementById("l1").value;
+	
+	if(z=="hidden"){
+		$('#l1').show();
+		document.getElementById("light2").innerHTML="Light 2";
+
+	}
+	
+	else{
+	document.getElementById("l2").style.display="";
+	document.getElementById("light2").innerHTML="Light 3";
+	
+	}
+	
+}
+
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+} 	
+
+
+</script>
+
+</body>
+</html> 
